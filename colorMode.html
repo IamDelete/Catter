@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style/colorMode.css">
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+	<header>
+		<div class="corner" id="leftTop"></div>
+		<div class="corner" id="rightTop"></div>
+
+		<h1 id="title">Catter</h1>
+
+		<h2 id="subTitle">TEST COLOR MODE</h2>
+
+		<div id="wrapper">
+			<p id="text">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+			</p>
+		</div>
+
+		<div class="corner" id="leftBottom"></div>
+		<div class="corner" id="rightBottom"></div>
+	</header>
+</body>
+</html>
+
+<style>
+	@import url('https://fonts.cdnfonts.com/css/montserrat');
+	@import url('https://fonts.cdnfonts.com/css/hind');
+	@import url('https://fonts.cdnfonts.com/css/cabin-2');
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	background-image: var(--backgroundDark);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#title {
+	color: var(--accentDark);
+	text-align: center;
+	font-family: 'Montserrat';
+	font-size: 10vw;
+}
+
+#subTitle {
+	color: var(--accentDark);
+	text-align: center;
+	font-family: 'Cabin';
+	font-size: 1.5vw;
+	word-spacing: 2px;
+	letter-spacing: 1.5px;
+}
+
+.corner {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+}
+
+#leftTop {
+	top: 25px;
+	left: 25px;
+	border-top: 1px solid var(--accentDark);
+	border-left: 1px solid var(--accentDark);
+}
+
+#leftBottom {
+	bottom: 25px;
+	left: 25px;
+	border-bottom: 1px solid var(--accentDark);
+	border-left: 1px solid var(--accentDark);
+}
+
+#rightTop {
+	top: 25px;
+	right: 25px;
+	border-top: 1px solid var(--accentDark);
+	border-right: 1px solid var(--accentDark);
+}
+
+#rightBottom {
+	bottom: 25px;
+	right: 25px;
+	border-bottom: 1px solid var(--accentDark);
+	border-right: 1px solid var(--accentDark);
+}
+</style>
