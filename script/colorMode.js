@@ -2,8 +2,9 @@ const btn = document.getElementById('colorModeButton');
 const svgBtn = document.getElementById('svgBtn')
 const title = document.getElementById('title');
 const subTitle = document.getElementById('subTitle');
-const text = document.getElementById('text');
+const texts = document.querySelectorAll('.text');
 const corners = document.querySelectorAll('.corner');
+const header = document.querySelector('header');
 
 let isDarkMode = true;
 
@@ -12,8 +13,10 @@ function toggleMode() {
     // Switch to light mode
     title.style.color = 'var(--accentLight)';
     subTitle.style.color = 'var(--accentLight)';
-		document.body.style.backgroundImage = 'var(--backgroundLight)';
-		text.style.color = 'var(--mainDark)';
+		header.style.backgroundImage = 'var(--backgroundLight)';
+		texts.forEach(text => {
+      text.style.color = 'var(--mid)';
+    });
     svgBtn.setAttribute('fill', 'var(--mainDark');
 		corners.forEach(corner => {
 			corner.style.borderColor = 'var(--mainDark)';
@@ -22,8 +25,10 @@ function toggleMode() {
     // Switch to dark mode
     title.style.color = 'var(--accentDark)';
     subTitle.style.color = 'var(--accentDark)';
-		document.body.style.backgroundImage = 'var(--backgroundDark)';
-		text.style.color = 'var(--mid)';
+		header.style.backgroundImage = 'var(--backgroundDark)';
+		texts.forEach(text => {
+      text.style.color = 'var(--mid)';
+    });
     svgBtn.setAttribute('fill', 'var(--mainLight');
 		corners.forEach(corner => {
 			corner.style.borderColor = 'var(--mainLight)';
