@@ -1,0 +1,22 @@
+<!-- aici e tamplate test TEO  schimba l cand punem html tau dar pastreaza partea importanta -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cat Gallery</h1>
+    {% for cat in cats %}
+        <div>
+            <h2>{{ cat.cat_name }}</h2>
+            <img src="{{ cat.cat_image.url }}" alt="{{ cat.cat_name }}">
+            <p>ELO: {{ cat.elo }}</p>
+
+        </div>
+
+    {% endfor %}
+</body>
+</html>

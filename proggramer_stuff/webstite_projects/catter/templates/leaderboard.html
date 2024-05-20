@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat Leaderboard</title>
+</head>
+<body>
+    <h1>Cat Leaderboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Elo</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cat in cats %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ cat.cat_name }}</td>
+                <td>{{ cat.elo }}</td>
+                <td><img src="{{ cat.cat_image.url }}" alt="{{ cat.cat_name }}" style="max-width: 100px; max-height: 100px;"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
