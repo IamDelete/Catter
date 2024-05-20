@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import CatForm
 import random as r
 from .models import Cat
+from django.http import JsonResponse
 
 
 def getcats(request):
@@ -33,7 +34,21 @@ def add_cat(request):
         form = CatForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('cat_success')  # Redirect to a success page or another page
+            return redirect('homepage')  # Redirect to a success page or another page
     else:
         form = CatForm()
     return render(request, 'add_cat.html', {'form': form})
+
+
+
+
+def update_elo(request, cat_id):
+    if request.method == 'POST':
+        cat = Cat.objects.get(id=cat_id)
+        # Update the cat's Elo score (for example, increase it by 10)
+        cat.elo += 10
+        cat.save()
+        # Redirect back to the getcats view
+        return redirect('homapage')
+
+
