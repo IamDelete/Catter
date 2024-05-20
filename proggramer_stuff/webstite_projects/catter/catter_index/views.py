@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .forms import CatForm
 import random as r
 from .models import Cat
 
@@ -19,12 +20,20 @@ def getcats(request):
         'cat2' : pisica_2,
     }
 
-    return render(request,'home.html')
+    return render(request,'home.html',context)
     
 
 def leaderboard(request):
     cats = Cat.objects.all().order_by('-elo')
     return render(request, 'leaderboard.html', {'cats': cats})
 
-def post_cat(request):
-    return HttpResponse("leaderboard")
+
+def add_cat(request):
+    if request.method == 'POST':
+        form = CatForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('cat_success')  # Redirect to a success page or another page
+    else:
+        form = CatForm()
+    return render(request, 'add_cat.html', {'form': form})

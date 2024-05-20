@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Cat</title>
+</head>
+<body>
+    <h1>Add a New Cat</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Cat</button>
+    </form>
+</body>
+</html>
