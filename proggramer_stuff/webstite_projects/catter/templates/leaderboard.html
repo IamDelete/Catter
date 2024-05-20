@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cat Leaderboard</title>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <h1>Cat Leaderboard</h1>
+	<header>
+		<div class="corner" id="leftTop"></div>
+		<div class="corner" id="rightTop"></div>
+
+		<h1 id="title">Catter</h1>
+
+		<h2 id="subTitle">POST COMPETE ENJOY</h2>
+
+		<div class="text">
+            
+        </div>
+
+		<div class="corner" id="leftBottom"></div>
+		<div class="corner" id="rightBottom"></div>
+
+        <div id="descriptionContainer">
+			<div id="textWrapper">
+				<p id="text">Welcome to the ultimate cat showdown! Our delightful feline contestants are ready to steal your heart. Cast your votes, compare their cuteness, and let the Elo-based system determine the winner.</p>
+			</div>
+
+			<!-- ARROW -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" id="arrow">
+				<g>
+					<path fill="rgba(255, 255, 255, 0.389)" d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+					<polygon fill="rgba(255, 255, 255, 0.389)" points="12 12.586 8.707 9.293 7.293 10.707 12 15.414 16.707 10.707 15.293 9.293 12 12.586"/>
+				</g>
+			</svg>
+		</div>
+	</header>
+
+	<nav>
+		<div id="navBorder">
+			<a href="/home" class="navButton">HOME</a>
+			<a href="/post_page" class="navButton">POST</a>
+			<a href="/score" class="navButton">LEADERBOARD</a>
+		</div>
+	</nav>
+
+	<main style="height: 90vh;">
+        <h1>Cat Leaderboard</h1>
+        <div id="tableWrapper">
     <table>
         <thead>
             <tr>
@@ -25,5 +67,308 @@
             {% endfor %}
         </tbody>
     </table>
+</div>
+
+	</main>
+
 </body>
 </html>
+<style>
+        @import url('https://fonts.cdnfonts.com/css/montserrat'); /* 'Montserrat' */
+@import url('https://fonts.cdnfonts.com/css/hind'); /* 'Hind' */
+@import url('https://fonts.cdnfonts.com/css/cabin-2'); /* 'Cabin' */
+    main h1, main h2 {
+        color: white;
+
+    }
+
+    main h1 {
+        font-family: 'Montserrat';
+        font-size: 7vw;
+        text-align: center;
+    }
+
+    main {
+        height: 90vh!important;
+    }
+
+    #tableWrapper {
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+
+    th {
+        font-family: 'Cabin';
+        font-size: 3vw;
+        margin-right: 10px;
+        padding: 2vw;
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+        font-family: 'Hind';
+        font-size: 1.5vw;
+    }
+
+    @media screen and (max-width: 756px) {
+        main h1 {
+            font-size: 10vw!important;
+        }
+
+        th {
+            font-size: 5vw!important;
+        }
+
+        td {
+            font-size: 3.5vw!important;
+        }
+
+        #textWrapper p {
+            font-size: 4vw!important;
+        }
+    }
+
+    #descriptionContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -15vh;
+}
+
+#textWrapper {
+	width: 45vw;
+}
+
+#textWrapper p {
+	color: rgba(255, 255, 255, 0.389);
+	font-size: 1.2vw;
+	text-align: center;
+	font-family: 'Hind';
+}
+
+.non-draggable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
+  -webkit-user-drag: none;   /* Disable dragging in Safari and Chrome */
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+}
+
+nav {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+      width: 100vw;
+  }
+  
+  .navButton {
+      color: white;
+      text-decoration: none;
+      font-family: 'Cabin';
+      margin-right: 1vw;
+      transition: all 0.3s ease-in-out;
+  }
+  
+  .navButton:hover {
+      transform: scale(1.1)
+  }
+  
+  .navButton:last-child {
+      margin-right: 0;
+  }
+  
+  #navBorder {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      width: 30vw;
+      height: 6vh;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  ::-webkit-scrollbar {
+  width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+  background: #161616;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+  
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 5px;
+}
+
+body, html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.noSelection {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+body {
+  background-image: var(--backgroundDark);
+  transition: background 0.4s ease-in-out;
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: var(--backgroundDark);
+  transition: background 0.4s ease-in-out;
+}
+
+#title {
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 10vw;
+  margin-bottom: 0;
+  transition: color 0.4s ease-in-out;
+}
+
+#subTitle {
+  color: white;
+  text-align: center;
+  font-family: 'Cabin';
+  font-size: 1.5vw;
+  word-spacing: 2px;
+  letter-spacing: 1.5px;
+  transition: color 0.4s ease-in-out;
+}
+
+.corner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: border 0.4s ease-in-out;
+}
+
+#leftTop {
+  top: 25px;
+  left: 25px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+#leftBottom {
+  bottom: 25px;
+  left: 25px;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+}
+
+#rightTop {
+  top: 25px;
+  right: 25px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
+
+#rightBottom {
+  bottom: 25px;
+  right: 25px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+
+p {
+  color: var(--mid);
+  font-family: 'Hind';
+  font-size: 1vw;
+  margin-top: 25vh;
+  text-align: center;
+  transition: color 0.4s ease-in-out;
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+}
+
+#svgBtn {
+  transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  #title {
+    font-size: 25vw !important;
+    margin-top: -25vh;
+  }
+
+  #subTitle {
+    font-size: 3.5vw !important;
+    margin-top: 0;
+  }
+
+  #text {
+    font-size: 3.5vw !important;
+  }
+
+  #wrapper {
+    width: 85vw;
+  }
+}
+
+:root {
+	/* Dark Mode / Default */
+  --mainDark: #161616;
+	--mid: #7575756c;
+	--accentDark: rgb(242, 243, 244);
+	--backgroundDark: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1047%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(22%2c 22%2c 22%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c550.762C122.134%2c556.987%2c264.618%2c636.499%2c359.351%2c559.161C456.585%2c479.782%2c399.513%2c318.649%2c432.628%2c197.575C458.848%2c101.709%2c542.744%2c22.262%2c533.255%2c-76.671C523.643%2c-176.882%2c450.325%2c-257.075%2c381.935%2c-330.949C315.352%2c-402.871%2c234.609%2c-454.714%2c145.498%2c-495.521C43.625%2c-542.173%2c-60.132%2c-595.749%2c-171.606%2c-584.436C-293.366%2c-572.079%2c-434.502%2c-535.782%2c-496.655%2c-430.354C-559.295%2c-324.099%2c-459.362%2c-190.655%2c-475.814%2c-68.412C-492.028%2c52.064%2c-618.72%2c151.517%2c-590.889%2c269.85C-562.9%2c388.857%2c-446.969%2c471.203%2c-336.557%2c523.693C-232.809%2c573.015%2c-114.726%2c544.915%2c0%2c550.762' fill='%230e0e0e'%3e%3c/path%3e%3cpath d='M1920 1808.327C2057.077 1797.77 2088.947 1597.0529999999999 2202.165 1519.058 2309.643 1445.018 2480.3959999999997 1476.892 2555.775 1370.349 2631.621 1263.145 2611.865 1112.495 2579.925 985.117 2549.8 864.977 2471.053 765.838 2382.482 679.2570000000001 2299.411 598.052 2201.181 534.549 2088.822 505.04600000000005 1978.557 476.09299999999996 1862.661 480.13699999999994 1753.865 514.197 1646.342 547.859 1566.067 626.9780000000001 1477.379 696.467 1366.705 783.182 1207.983 836.869 1169.461 972.0889999999999 1130.847 1107.633 1201.694 1256.476 1285.578 1369.731 1361.963 1472.862 1502.882 1491.8 1608.449 1564.782 1719.117 1641.29 1785.857 1818.658 1920 1808.327' fill='%231e1e1e'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1047'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+
+	/* Light Mode */
+	--mainLight: rgb(242, 243, 244);
+	--accentLight: #161616;
+	--backgroundLight:  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1046%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(171%2c 171%2c 171%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c550.762C122.134%2c556.987%2c264.618%2c636.499%2c359.351%2c559.161C456.585%2c479.782%2c399.513%2c318.649%2c432.628%2c197.575C458.848%2c101.709%2c542.744%2c22.262%2c533.255%2c-76.671C523.643%2c-176.882%2c450.325%2c-257.075%2c381.935%2c-330.949C315.352%2c-402.871%2c234.609%2c-454.714%2c145.498%2c-495.521C43.625%2c-542.173%2c-60.132%2c-595.749%2c-171.606%2c-584.436C-293.366%2c-572.079%2c-434.502%2c-535.782%2c-496.655%2c-430.354C-559.295%2c-324.099%2c-459.362%2c-190.655%2c-475.814%2c-68.412C-492.028%2c52.064%2c-618.72%2c151.517%2c-590.889%2c269.85C-562.9%2c388.857%2c-446.969%2c471.203%2c-336.557%2c523.693C-232.809%2c573.015%2c-114.726%2c544.915%2c0%2c550.762' fill='%236f6f6f'%3e%3c/path%3e%3cpath d='M1920 1808.327C2057.077 1797.77 2088.947 1597.0529999999999 2202.165 1519.058 2309.643 1445.018 2480.3959999999997 1476.892 2555.775 1370.349 2631.621 1263.145 2611.865 1112.495 2579.925 985.117 2549.8 864.977 2471.053 765.838 2382.482 679.2570000000001 2299.411 598.052 2201.181 534.549 2088.822 505.04600000000005 1978.557 476.09299999999996 1862.661 480.13699999999994 1753.865 514.197 1646.342 547.859 1566.067 626.9780000000001 1477.379 696.467 1366.705 783.182 1207.983 836.869 1169.461 972.0889999999999 1130.847 1107.633 1201.694 1256.476 1285.578 1369.731 1361.963 1472.862 1502.882 1491.8 1608.449 1564.782 1719.117 1641.29 1785.857 1818.658 1920 1808.327' fill='%23e7e7e7'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1046'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+
+#colorModeButton svg {
+	transition: all 1s ease-in-out;
+}
+
+#colorModeButton svg:hover {
+	animation: colorModeChange 1s;
+}
+
+@keyframes colorModeChange {
+	0% { filter: brightness(1); }
+	25% { filter: brightness(5); }
+	50% { filter: brightness(1); }
+	75% { filter: brightness(0.01); }
+	100% { filter: brightness(1); }
+}
+</style>
