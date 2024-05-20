@@ -5,9 +5,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style/fonts.css">
-	<link rel="stylesheet" href="./style/scrollbar.css">
-	<link rel="stylesheet" href="./style/index.css">
   <title>Catter</title>
 </head>
 <body>
@@ -37,6 +34,14 @@
 		</div>
 
 	</header>
+
+    <nav>
+		<div id="navBorder">
+			<a href="/home" class="navButton">HOME</a>
+			<a href="/post_page" class="navButton">POST</a>
+			<a href="/score" class="navButton">LEADERBOARD</a>
+		</div>
+	</nav>
 
 	<main>
 		<h1>Cat Gallery</h1>
@@ -304,7 +309,7 @@ header h2 {
 }
 
 main {
-	height: 100vh;
+	height: 90vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -357,5 +362,42 @@ backdrop-filter: blur(4.2px);
 border: 1px solid rgba(22, 22, 22, 0.37);
 width: 40vw;
 height: 40vh;
+display: flex;
+justify-content: center;
+}
+
+nav {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+	width: 100vw;
+}
+
+.navButton {
+	color: white;
+	text-decoration: none;
+	font-family: 'Cabin';
+	margin-right: 1vw;
+	transition: all 0.3s ease-in-out;
+}
+
+.navButton:hover {
+	transform: scale(1.1)
+}
+
+.navButton:last-child {
+	margin-right: 0;
+}
+
+#navBorder {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	width: 30vw;
+	height: 6vh;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 </style>
