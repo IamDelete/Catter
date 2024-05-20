@@ -1,0 +1,18 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat'); /* 'Montserrat' */
+@import url('https://fonts.cdnfonts.com/css/hind'); /* 'Hind' */
+@import url('https://fonts.cdnfonts.com/css/cabin-2'); /* 'Cabin' */
+
+.non-draggable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
+  -webkit-user-drag: none;   /* Disable dragging in Safari and Chrome */
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+}
