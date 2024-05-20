@@ -1,29 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cat Leaderboard</title>
-</head>
-<body>
-    <h1>Cat Leaderboard</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Elo</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for cat in cats %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ cat.cat_name }}</td>
-                <td>{{ cat.elo }}</td>
-                <td><img src="{{ cat.cat_image.url }}" alt="{{ cat.cat_name }}" style="max-width: 100px; max-height: 100px;"></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+
+Skip to content
+Navigation Menu
+
+    IamDelete
+    /
+    Catter
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+
+    Settings
+
+Commit
+Update leaderboard.html
+
+    backendv1 backendv3 
+
+@teo-101
+teo-101 committed May 20, 2024
+1 parent 67c8a08 commit ea6a862
+Showing 1 changed file with 36 additions and 0 deletions.
+
+36 changes: 36 additions & 0 deletions 36
+proggramer_stuff/webstite_projects/catter/templates/leaderboard.html
+@@ -20,6 +20,20 @@ <h2 id="subTitle">POST COMPETE ENJOY</h2>
+
+		<div class="corner" id="leftBottom"></div>
+		<div class="corner" id="rightBottom"></div>
+
+        <div id="descriptionContainer">
+			<div id="textWrapper">
+				<p id="text">Welcome to the ultimate cat showdown! Our delightful feline contestants are ready to steal your heart. Cast your votes, compare their cuteness, and let the Elo-based system determine the winner.</p>
+			</div>
+
+			<!-- ARROW -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" id="arrow">
+				<g>
+					<path fill="rgba(255, 255, 255, 0.389)" d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+					<polygon fill="rgba(255, 255, 255, 0.389)" points="12 12.586 8.707 9.293 7.293 10.707 12 15.414 16.707 10.707 15.293 9.293 12 12.586"/>
+				</g>
+			</svg>
+		</div>
+	</header>
+
+	<nav>
+@@ -110,8 +124,30 @@ <h1>Cat Leaderboard</h1>
+        td {
+            font-size: 3.5vw!important;
+        }
+
+        #textWrapper p {
+            font-size: 4vw!important;
+        }
+    }
+
+    #descriptionContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -15vh;
+}
+
+#textWrapper {
+	width: 45vw;
+}
+
+#textWrapper p {
+	color: rgba(255, 255, 255, 0.389);
+	font-size: 1.2vw;
+	text-align: center;
+	font-family: 'Hind';
+}
+
+.non-draggable {
+  -webkit-user-select: none; /* Safari */
+0 comments on commit ea6a862
+@IamDelete
+Comment
+
+Leave a comment
+Footer
+© 2024 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact
+
+Update leaderboard.html · IamDelete/Catter@ea6a862
+ 
