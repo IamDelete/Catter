@@ -48,7 +48,7 @@
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <div class="center"><button type="submit">Add Cat</button></div>
+                    <div class="center"><button type="submit" class="solid-dark-button">Add Cat</button></div>
                 </form>
             </div>
         </div>
@@ -87,6 +87,20 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 width: 50vw;
 padding: 3vw;
+}
+
+.solid-dark-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.solid-dark-button:hover {
+  background-color: #444;
 }
 
 .center {
