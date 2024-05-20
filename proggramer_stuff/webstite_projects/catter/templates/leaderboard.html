@@ -20,6 +20,20 @@
 
 		<div class="corner" id="leftBottom"></div>
 		<div class="corner" id="rightBottom"></div>
+
+        <div id="descriptionContainer">
+			<div id="textWrapper">
+				<p id="text">Welcome to the ultimate cat showdown! Our delightful feline contestants are ready to steal your heart. Cast your votes, compare their cuteness, and let the Elo-based system determine the winner.</p>
+			</div>
+
+			<!-- ARROW -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" id="arrow">
+				<g>
+					<path fill="rgba(255, 255, 255, 0.389)" d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+					<polygon fill="rgba(255, 255, 255, 0.389)" points="12 12.586 8.707 9.293 7.293 10.707 12 15.414 16.707 10.707 15.293 9.293 12 12.586"/>
+				</g>
+			</svg>
+		</div>
 	</header>
 
 	<nav>
@@ -110,8 +124,30 @@
         td {
             font-size: 3.5vw!important;
         }
+
+        #textWrapper p {
+            font-size: 4vw!important;
+        }
     }
 
+    #descriptionContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -15vh;
+}
+
+#textWrapper {
+	width: 45vw;
+}
+
+#textWrapper p {
+	color: rgba(255, 255, 255, 0.389);
+	font-size: 1.2vw;
+	text-align: center;
+	font-family: 'Hind';
+}
 
 .non-draggable {
   -webkit-user-select: none; /* Safari */
