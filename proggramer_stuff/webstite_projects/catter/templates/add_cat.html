@@ -1,14 +1,422 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-    <title>Add Cat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catter</title>
 </head>
 <body>
-    <h1>Add a New Cat</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Cat</button>
-    </form>
+	<header>
+		<div class="corner" id="leftTop"></div>
+		<div class="corner" id="rightTop"></div>
+
+		<h1 id="title">Catter</h1>
+
+		<h2 id="subtitle">POST SHARE ENJOY</h2>
+
+		<div class="corner" id="leftBottom"></div>
+		<div class="corner" id="rightBottom"></div>
+
+		<div id="descriptionContainer">
+			<div id="textWrapper">
+				<p id="text">Welcome to the ultimate cat showdown! Our delightful feline contestants are ready to steal your heart. Cast your votes, compare their cuteness, and let the Elo-based system determine the winner.</p>
+			</div>
+
+			<!-- ARROW -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" id="arrow">
+				<g>
+					<path fill="rgba(255, 255, 255, 0.389)" d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+					<polygon fill="rgba(255, 255, 255, 0.389)" points="12 12.586 8.707 9.293 7.293 10.707 12 15.414 16.707 10.707 15.293 9.293 12 12.586"/>
+				</g>
+			</svg>
+		</div>
+
+	</header>
+
+    <nav>
+		<div id="navBorder">
+			<a href="/home" class="navButton">HOME</a>
+			<a href="/add_cat" class="navButton">POST</a>
+			<a href="/score" class="navButton">LEADERBOARD</a>
+		</div>
+	</nav>
+
+	<main>
+		<h1>Add a New Cat</h1>
+        <div class="center">
+            <div id="formWrapper">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="center"><button type="submit">Add Cat</button></div>
+                </form>
+            </div>
+        </div>
+	</main>
 </body>
 </html>
+
+<style>
+    @import url('https://fonts.cdnfonts.com/css/montserrat'); /* 'Montserrat' */
+@import url('https://fonts.cdnfonts.com/css/hind'); /* 'Hind' */
+@import url('https://fonts.cdnfonts.com/css/cabin-2'); /* 'Cabin' */
+
+.non-draggable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
+  -webkit-user-drag: none;   /* Disable dragging in Safari and Chrome */
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Cabin';
+}
+
+#formWrapper {
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+width: 50vw;
+padding: 3vw;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+}
+
+form
+
+body, html {
+  border: 0;
+  padding: 0;
+  margin: 0;
+	overflow-x: hidden;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1049%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(34%2c 34%2c 34%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c697.202C142.859%2c689.113%2c283.953%2c700.533%2c417.95%2c650.343C576.781%2c590.851%2c761.574%2c534.076%2c838.744%2c383.042C916.191%2c231.466%2c866.578%2c44.02%2c809.726%2c-116.421C759.398%2c-258.452%2c653.265%2c-369.168%2c537.867%2c-466.064C436.101%2c-551.513%2c312.386%2c-593.212%2c187.575%2c-638.821C53.839%2c-687.692%2c-75.862%2c-751.516%2c-217.947%2c-742.259C-381.512%2c-731.602%2c-584.884%2c-721.27%2c-672.562%2c-582.779C-762.451%2c-440.796%2c-636.816%2c-258.575%2c-630.481%2c-90.649C-625.571%2c39.507%2c-668.637%2c165.114%2c-639.558%2c292.076C-605.413%2c441.158%2c-578.719%2c617.62%2c-449.517%2c699.462C-320.319%2c781.302%2c-152.693%2c705.848%2c0%2c697.202' fill='%23161616'%3e%3c/path%3e%3cpath d='M1920 1777.892C2053.482 1799.26 2190.547 1751.011 2304.742 1678.67 2419.371 1606.054 2508.814 1497.9560000000001 2560.166 1372.354 2610.324 1249.67 2615.476 1113.671 2588.819 983.838 2563.181 858.969 2494.119 751.165 2412.516 653.233 2329.583 553.704 2239.935 450.201 2115.149 415.38300000000004 1990.975 380.736 1864.18 432.47400000000005 1739.555 465.462 1611.474 499.365 1466.284 511.558 1378.136 610.472 1289.699 709.71 1282.595 854.521 1274.6 987.206 1267.124 1111.284 1271.8809999999999 1239.915 1333.712 1347.749 1393.009 1451.164 1510.921 1496.464 1607.036 1566.981 1710.562 1642.935 1793.214 1757.596 1920 1777.892' fill='%232e2e2e'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1049'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+
+header {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1049%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(34%2c 34%2c 34%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c697.202C142.859%2c689.113%2c283.953%2c700.533%2c417.95%2c650.343C576.781%2c590.851%2c761.574%2c534.076%2c838.744%2c383.042C916.191%2c231.466%2c866.578%2c44.02%2c809.726%2c-116.421C759.398%2c-258.452%2c653.265%2c-369.168%2c537.867%2c-466.064C436.101%2c-551.513%2c312.386%2c-593.212%2c187.575%2c-638.821C53.839%2c-687.692%2c-75.862%2c-751.516%2c-217.947%2c-742.259C-381.512%2c-731.602%2c-584.884%2c-721.27%2c-672.562%2c-582.779C-762.451%2c-440.796%2c-636.816%2c-258.575%2c-630.481%2c-90.649C-625.571%2c39.507%2c-668.637%2c165.114%2c-639.558%2c292.076C-605.413%2c441.158%2c-578.719%2c617.62%2c-449.517%2c699.462C-320.319%2c781.302%2c-152.693%2c705.848%2c0%2c697.202' fill='%23161616'%3e%3c/path%3e%3cpath d='M1920 1777.892C2053.482 1799.26 2190.547 1751.011 2304.742 1678.67 2419.371 1606.054 2508.814 1497.9560000000001 2560.166 1372.354 2610.324 1249.67 2615.476 1113.671 2588.819 983.838 2563.181 858.969 2494.119 751.165 2412.516 653.233 2329.583 553.704 2239.935 450.201 2115.149 415.38300000000004 1990.975 380.736 1864.18 432.47400000000005 1739.555 465.462 1611.474 499.365 1466.284 511.558 1378.136 610.472 1289.699 709.71 1282.595 854.521 1274.6 987.206 1267.124 1111.284 1271.8809999999999 1239.915 1333.712 1347.749 1393.009 1451.164 1510.921 1496.464 1607.036 1566.981 1710.562 1642.935 1793.214 1757.596 1920 1777.892' fill='%232e2e2e'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1049'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	margin-top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+header h1 {
+	color: white;
+	font-family: 'Montserrat';
+	text-align: center;
+	font-size: 20vh;
+	margin-bottom: 20px;
+}
+
+header h2 {
+	color: white;
+	font-family: 'Cabin';
+	font-weight: 400;
+	text-align: center;
+	font-size: 3vh;
+	word-spacing: 10px;
+}
+
+.corner {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+
+#leftTop {
+	border-left: 2px rgba(255, 255, 255, 0.7) solid;
+	border-top: 2px rgba(255, 255, 255, 0.7) solid;
+	top: 25px;
+	left: 25px;
+}
+
+#rightTop {
+	border-right: 2px rgba(255, 255, 255, 0.7) solid;
+	border-top: 2px rgba(255, 255, 255, 0.7) solid;
+	top: 25px;
+	right: 25px;
+}
+
+#leftBottom {
+	border-left: 2px rgba(255, 255, 255, 0.7) solid;
+	border-bottom: 2px rgba(255, 255, 255, 0.7) solid;
+	bottom: 25px;
+	left: 25px;
+}
+
+#rightBottom {
+	border-right: 2px rgba(255, 255, 255, 0.7) solid;
+	border-bottom: 2px rgba(255, 255, 255, 0.7) solid;
+	bottom: 25px;
+	right: 25px;
+}
+
+#descriptionContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 25vh;
+}
+
+#textWrapper {
+	width: 45vw;
+}
+
+#textWrapper p {
+	color: rgba(255, 255, 255, 0.389);
+	font-size: 1.2vw;
+	text-align: center;
+	font-family: 'Hind';
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [id*="title"] {
+    font-size: 23vw;
+  }
+
+	[id*="subtitle"] {
+		font-size: 6vw;
+		word-spacing: 2.5px;
+	}
+
+	[id*="textWrapper"] {
+		width: 50%!important;
+	}
+
+	#descriptionContainer {
+		margin-top: 15vh!important;
+	}
+
+	#arrow {
+		margin-top: 10vh;
+	}
+
+	#text {
+		font-size: 4.4vw!important;
+	}
+
+	#wrapper {
+		flex-direction: column!important;
+	}
+
+	.catContainers {
+		height: 30vh!important;
+	}
+
+	.catName {
+		font-size: 6vw!important;
+	}
+
+	.catElo {
+		font-size: 3vw!important;
+	}
+
+	.catContainers:first-child {
+		margin-bottom: 10vh;
+	}
+
+	#voteHelp {
+		font-size: 5vw!important;
+	}
+
+	.hover-text {
+		font-size: 4vw!important;
+	}
+}
+
+#wrapper {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5vw;
+	margin-top: 5vh;
+	margin-bottom: 0;
+}
+
+.catContainers {
+	width: 35vw;
+	padding: 2vw;
+	height: 65vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: rgba(109, 109, 109, 0.16);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(6.2px);
+	-webkit-backdrop-filter: blur(6.2px);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.imgWrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items:center ;
+	width: 25vw;
+	height: 25vw;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.catImg:hover {
+	filter: blur(20px);
+}
+
+.catImg {
+	height: 100%;
+	transition: all 0.8s ease-in-out;
+}
+
+.catName {
+	color: white;
+	font-size: 2.5vw;
+	font-family: 'Cabin';
+	margin-bottom: 0;
+}
+
+.catElo {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 1vw;
+	font-family: 'Hind';
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.hover-text {
+	position: absolute;
+	color: white;
+	font-size: 2vw;
+	font-family: 'Montserrat';
+	transition: opacity 0.8s ease-in-out;
+	opacity: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	z-index: 999;
+	text-align: center;
+	margin: 0;
+}
+
+#voteHelp {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.389);
+	font-size: 1.2vw;
+	font-family: 'Hind';
+	margin-top: 15vh;
+	margin-bottom: 10vh;
+}
+
+main {
+	height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+  background: #161616;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+  
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 5px;
+}
+
+body, html {
+  scroll-behavior: smooth;
+}
+
+main h1, main h2 {
+    color: white;
+}
+
+main h1 {
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Cabin';
+}
+
+#catWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.catBoxs {
+    background: rgba(22, 22, 22, 0.43);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.2px);
+-webkit-backdrop-filter: blur(4.2px);
+border: 1px solid rgba(22, 22, 22, 0.37);
+width: 40vw;
+height: 40vh;
+display: flex;
+justify-content: center;
+}
+
+nav {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+	width: 100vw;
+}
+
+.navButton {
+	color: white;
+	text-decoration: none;
+	font-family: 'Cabin';
+	margin-right: 1vw;
+	transition: all 0.3s ease-in-out;
+}
+
+.navButton:hover {
+	transform: scale(1.1)
+}
+
+.navButton:last-child {
+	margin-right: 0;
+}
+
+#navBorder {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	width: 30vw;
+	height: 6vh;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+</style>
