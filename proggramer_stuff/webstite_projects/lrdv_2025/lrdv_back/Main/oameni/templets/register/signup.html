@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account</title>
+
+</head>
+<body>
+    
+    <form method="POST">
+
+        {%csrf_token%}
+        <div>
+            <label for="id_email">Email:</label>
+            <input type="email" name="email" maxlength="320" required="" id="id_email">
+        </div>
+
+        <div>
+            <label for="id_nume">Nume:</label>
+            <input type="text" name="nume" maxlength="30" required="" id="id_nume">
+        </div>
+
+        <div>
+        <label for="id_prenume">Prenume:</label>
+        <input type="text" name="prenume" maxlength="30" required="" id="id_prenume">
+            
+        </div>
+
+        <div>
+            <label for="id_coordonator_status">Coordonator status:</label>
+            <input type="checkbox" name="coordonator_status" id="id_coordonator_status">
+        </div>
+
+        <button type="submit">Create account</button>
+    
+    </form>
+    
+    
+</body>
+
+</html>
